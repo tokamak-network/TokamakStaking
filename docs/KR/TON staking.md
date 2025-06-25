@@ -1,82 +1,64 @@
-# TON 스테이킹 관련 함수
-> DepositManager 컨트랙을 통해 스테이킹과 관련된 함수를 실행 할 수 있습니다.
-- DepositManager : [etherscan link](https://etherscan.io/address/0x0b58ca72b12f01fc05f8f252e226f3e2089bd00e#writeProxyContract)
+# TON 스테이킹 함수
+> TON 컨트랙을 통해 스테이킹과 관련된 함수를 실행 할 수 있습니다.
+- TON : [etherscan link](https://etherscan.io/address/0x2be5e8c109e2197D077D13A82dAead6a9b3433C5#writeContract)
 
-![Write as Proxy 선택](../img/ton_staking_0.png)
+![Write 선택](../img/stake_ton_0.png)
 
-위의 이더스캔 링크 페이지의 **Write as Proxy** 페이지에서 실행 가능한 함수를 확인하실 수 있습니다.
+위의 이더스캔 링크 페이지의 **Write** 페이지에서 실행 가능한 함수를 확인하실 수 있습니다.
 
 *********
 
-### [requestWithdrawal(address layer2, uint256 amount)](https://etherscan.io/address/0x0b58ca72b12f01fc05f8f252e226f3e2089bd00e#writeProxyContract#F15)
+### [approveAndCall(address spender, uint256 amount, data bytes)](https://etherscan.io/address/0x2be5e8c109e2197D077D13A82dAead6a9b3433C5#writeContract#F3)
 
-스테이킹 된 수량 출금 요청하기
+TON 토큰을 스테이킹 컨트랙트에 승인(approve)하고, 동시에 지정된 layer2 오퍼레이터에 스테이킹을 실행하는 함수입니다.
 
 - 파라미터
-  - address layer2: 출금을 수행할 오퍼레이터 주소
-  - uint256 amount: 출금할 수량
+  - address spender: WTON 주소(`0xc4A11aaf6ea915Ed7Ac194161d2fC9384F15bff2`)
+  - uint256 amount: 스테이킹할 TON 토큰 수량(Wei)
+  - data: DepositManager 주소(고정)와 스테이킹할 오퍼레이터 주소(가변)를 인코딩한 값
 - 결과값
-  -  없음
+  - 없음
+
+> 이 함수는 approve와 staking을 한 번에 처리하므로, 별도의 approve 트랜잭션 없이 바로 스테이킹이 가능합니다.
+
+**data 파라미터 설명**
+- data 필드는 DepositManager 주소(예: `0x0b58ca72b12f01fc05f8f252e226f3e2089bd00e`)와 스테이킹할 오퍼레이터 주소(예: `0xF078AE62eA4740E19ddf6c0c5e17Ecdb820BbEe1`)를 순서대로 32바이트씩 이어붙여 인코딩한 값입니다.
+- DepositManager 주소는 항상 고정되어 있으며, 오퍼레이터 주소만 변경됩니다.
+- 예시:
+  - data = `0x0000000000000000000000000b58ca72b12f01fc05f8f252e226f3e2089bd00e000000000000000000000000F078AE62eA4740E19ddf6c0c5e17Ecdb820BbEe1`
+    - 앞 32바이트: DepositManager 주소
+    - 뒤 32바이트: 스테이킹할 오퍼레이터 주소
+
+> 오퍼레이터 주소만 변경하여 여러 오퍼레이터에 대해 스테이킹을 진행할 수 있습니다.
 
 *********
 
-### [redepositMulti(address layer2, uint256 n)](https://etherscan.io/address/0x0b58ca72b12f01fc05f8f252e226f3e2089bd00e#writeProxyContract#F11)
+# WTON 스테이킹 함수
+> WTON 컨트랙을 통해 스테이킹과 관련된 함수를 실행 할 수 있습니다.
+- WTON : [etherscan link](https://etherscan.io/address/0xc4A11aaf6ea915Ed7Ac194161d2fC9384F15bff2#writeContract)
 
-출금 요청 대기 중인 수량들 다시 스테이킹하기
+위의 이더스캔 링크 페이지의 **Write** 페이지에서 실행 가능한 함수를 확인하실 수 있습니다.
+
+*********
+
+### [approveAndCall(address spender, uint256 amount, data bytes)](https://etherscan.io/address/0xc4A11aaf6ea915Ed7Ac194161d2fC9384F15bff2#writeContract#F3)
+
+WTON 토큰을 스테이킹 컨트랙트에 승인(approve)하고, 동시에 지정된 layer2 오퍼레이터에 스테이킹을 실행하는 함수입니다.
 
 - 파라미터
-  - address layer2: 출금을 수행할 오퍼레이터 주소
-  - uint256 n: 다시 스테이킹 요청할 요청의 개수
+  - address spender: DepositManager 주소(`0x0b58ca72b12f01fc05f8f252e226f3e2089bd00e`)
+  - uint256 amount: 스테이킹할 TON 토큰 수량(Ray)
+  - data: 스테이킹할 오퍼레이터 주소(가변)를 인코딩한 값
 - 결과값
-  -  없음
+  - 없음
 
-*********
+> 이 함수는 approve와 staking을 한 번에 처리하므로, 별도의 approve 트랜잭션 없이 바로 스테이킹이 가능합니다.
 
-# TON 스테이킹 관련 읽기 함수
-> DepositManager 컨트랙트를 통해 스테이킹과 관련된 정보를 조회할 수 있습니다.  
-> DepositManager : [etherscan link](https://etherscan.io/address/0x0b58ca72b12f01fc05f8f252e226f3e2089bd00e#readProxyContract)
+**data 파라미터 설명**
+- data 필드는 스테이킹할 오퍼레이터 주소(예: `0xF078AE62eA4740E19ddf6c0c5e17Ecdb820BbEe1`)를 순서대로 32바이트씩 이어붙여 인코딩한 값입니다.
+- 스테이킹을 하고자 하는 오퍼레이터의 주소만 변경하면 됩니다.
+- 예시:
+  - data = `0x000000000000000000000000F078AE62eA4740E19ddf6c0c5e17Ecdb820BbEe1`
+    - 뒤 32바이트: 스테이킹할 오퍼레이터 주소
 
-아래 함수들은 이더스캔의 **Read as Proxy** 탭에서 직접 실행해볼 수 있습니다.
-
-*********
-
-### [numPendingRequests(address layer2, address account)](https://etherscan.io/address/0x0b58ca72b12f01fc05f8f252e226f3e2089bd00e#readProxyContract#F13)
-
-특정 계정이 특정 layer2 오퍼레이터에 대해 대기 중인 출금 요청의 개수를 반환합니다.
-
-- 파라미터
-  - address layer2: layer2 오퍼레이터 주소
-  - address account: 조회할 사용자 주소
-- 반환값
-  - uint256: 대기 중인 출금 요청 개수
-
-*********
-
-### [numRequests(address layer2, address account)](https://etherscan.io/address/0x0b58ca72b12f01fc05f8f252e226f3e2089bd00e#readProxyContract#F14)
-
-특정 계정이 특정 layer2 오퍼레이터에 대해 생성한 전체 출금 요청의 개수를 반환합니다.
-
-- 파라미터
-  - address layer2: layer2 오퍼레이터 주소
-  - address account: 조회할 사용자 주소
-- 반환값
-  - uint256: 전체 출금 요청 개수
-
-*********
-
-### [withdrawalRequest(address layer2, address account, uint256 index)](https://etherscan.io/address/0x0b58ca72b12f01fc05f8f252e226f3e2089bd00e#readProxyContract#F16)
-
-특정 계정이 특정 layer2 오퍼레이터에 대해 생성한 출금 요청의 상세 정보를 반환합니다.
-
-- 파라미터
-  - address layer2: layer2 오퍼레이터 주소
-  - address account: 조회할 사용자 주소
-  - uint256 index: 요청 인덱스 (0부터 시작)
-- 반환값
-  - 출금 요청 정보(구조체 형태, 예: amount, requestedTime, claimed 등)
-
-*********
-
-각 함수는 [DepositManager 컨트랙트의 Read as Proxy](https://etherscan.io/address/0x0b58ca72b12f01fc05f8f252e226f3e2089bd00e#readProxyContract) 탭에서 직접 입력값을 넣고 결과를 확인할 수 있습니다.
-
-> 참고: withdrawalRequest의 반환값 구조는 컨트랙트 구현에 따라 다를 수 있으니, 실제 반환 필드는 이더스캔에서 확인하거나 컨트랙트 소스를 참고하세요.
+> 오퍼레이터 주소만 변경하여 여러 오퍼레이터에 대해 스테이킹을 진행할 수 있습니다.
