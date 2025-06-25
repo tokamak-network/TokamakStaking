@@ -123,7 +123,7 @@ Operator Manager 컨트랙트가 소유하고 있는 WTON의 밸런스 확인
 
 - 파라미터
   - uint256 blockNumber: 햔제 블록 번호 + 1
-  - address opAddress: candidateContract 주
+  - address opAddress: [candidateContract](#layer2byindexuint256-index) 입력
 - 결과
   - array: 분배 예상 정보 (7번째 인덱스가 추가로 분배될 WTON)
 
