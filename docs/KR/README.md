@@ -5,3 +5,6 @@
 
 - [이더스캔에서 컨트랙 함수를 호출하는 방법](./contract%20interaction%20using%20etherscan.md)
 - [컨트랙트 주소](./contract%20addresses.md)
+- [Stake 하는 방법](./TON%20staking.md)
+- [Unstake, Restake, Withdraw 하는 방법](./unstake%2C%20restake%20and%20withdraw.md)
+- [Operator 관련 정보 조회 방법](check%20l2%20information.md)
