@@ -16,7 +16,7 @@ TON 토큰을 스테이킹 컨트랙트에 승인(approve)하고, 동시에 지�
   - address spender: WTON 주소(`0xc4A11aaf6ea915Ed7Ac194161d2fC9384F15bff2`)
   - uint256 amount: 스테이킹할 TON 토큰 수량(Wei)
   - data: DepositManager 주소(고정)와 스테이킹할 오퍼레이터 주소(가변)를 인코딩한 값
-- 결과값
+- 결과
   - 없음
 
 > 이 함수는 approve와 staking을 한 번에 처리하므로, 별도의 approve 트랜잭션 없이 바로 스테이킹이 가능합니다.
@@ -49,7 +49,7 @@ WTON 토큰을 스테이킹 컨트랙트에 승인(approve)하고, 동시에 지
   - address spender: DepositManager 주소(`0x0b58ca72b12f01fc05f8f252e226f3e2089bd00e`)
   - uint256 amount: 스테이킹할 TON 토큰 수량(Ray)
   - data: 스테이킹할 오퍼레이터 주소(가변)를 인코딩한 값
-- 결과값
+- 결과
   - 없음
 
 > 이 함수는 approve와 staking을 한 번에 처리하므로, 별도의 approve 트랜잭션 없이 바로 스테이킹이 가능합니다.
