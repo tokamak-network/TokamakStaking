@@ -8,13 +8,13 @@
 
 *********
 
-### [approveAndCall(address spender, uint256 amount, data bytes)](https://etherscan.io/address/0x2be5e8c109e2197D077D13A82dAead6a9b3433C5#writeContract#F3)
+## [approveAndCall(address spender, uint256 amount, data bytes)](https://etherscan.io/address/0x2be5e8c109e2197D077D13A82dAead6a9b3433C5#writeContract#F3)
 
-TON 토큰을 스테이킹 컨트랙트에 승인(approve)하고, 동시에 지정된 layer2 오퍼레이터에 스테이킹을 실행하는 함수입니다.
+TON 토큰을 스테이킹 컨트랙트에 승인(approve)하고, 동시에 지정된 layer2 오퍼레이터에 스테이킹을 실행하는 함수입니다. spender에 승인을 내주고 data 필드를 통해 어디에 스테이킹 할 지를 선택합니다.
 
 - 파라미터
   - address spender: WTON 주소(`0xc4A11aaf6ea915Ed7Ac194161d2fC9384F15bff2`)
-  - uint256 amount: 스테이킹할 TON 토큰 수량(Wei)
+  - uint256 amount: 스테이킹할 TON 토큰 수량(Wei, 18 decimal)
   - data: DepositManager 주소(고정)와 스테이킹할 오퍼레이터 주소(가변)를 인코딩한 값
 - 결과
   - 없음
@@ -34,20 +34,20 @@ TON 토큰을 스테이킹 컨트랙트에 승인(approve)하고, 동시에 지�
 *********
 
 # WTON 스테이킹 함수
-> WTON 컨트랙을 통해 스테이킹과 관련된 함수를 실행 할 수 있습니다.
+> WTON 컨트랙을 통해 스테이킹과 관련된 함수를 실행 할 수 있습니다. 방법은 두 가지가 있습니다.
 - WTON : [etherscan link](https://etherscan.io/address/0xc4A11aaf6ea915Ed7Ac194161d2fC9384F15bff2#writeContract)
 
 위의 이더스캔 링크 페이지의 **Write** 페이지에서 실행 가능한 함수를 확인하실 수 있습니다.
 
 *********
 
-### [approveAndCall(address spender, uint256 amount, data bytes)](https://etherscan.io/address/0xc4A11aaf6ea915Ed7Ac194161d2fC9384F15bff2#writeContract#F3)
+## [1. approveAndCall(address spender, uint256 amount, data bytes)](https://etherscan.io/address/0xc4A11aaf6ea915Ed7Ac194161d2fC9384F15bff2#writeContract#F3)
 
 WTON 토큰을 스테이킹 컨트랙트에 승인(approve)하고, 동시에 지정된 layer2 오퍼레이터에 스테이킹을 실행하는 함수입니다.
 
 - 파라미터
   - address spender: DepositManager 주소(`0x0b58ca72b12f01fc05f8f252e226f3e2089bd00e`)
-  - uint256 amount: 스테이킹할 TON 토큰 수량(Ray)
+  - uint256 amount: 스테이킹할 TON 토큰 수량(Ray, 27 decimal)
   - data: 스테이킹할 오퍼레이터 주소(가변)를 인코딩한 값
 - 결과
   - 없음
@@ -62,3 +62,16 @@ WTON 토큰을 스테이킹 컨트랙트에 승인(approve)하고, 동시에 지
     - 뒤 32바이트: 스테이킹할 오퍼레이터 주소
 
 > 오퍼레이터 주소만 변경하여 여러 오퍼레이터에 대해 스테이킹을 진행할 수 있습니다.
+
+## 2. Approve and Deposit
+> Approve 와 Deposit을 나눠서 실행합니다
+### [2-1. approve](https://etherscan.io/address/0xc4A11aaf6ea915Ed7Ac194161d2fC9384F15bff2#writeContract#F2)
+이 방법은 승인(approve)와 deposit을 나눠서 하는 작업이며, 가스비 절약 측면에서 이점이 있습니다.
+- 파라미터
+  - address spender: DepositManager 주소(`0x0b58ca72b12f01fc05f8f252e226f3e2089bd00e`)
+  - uint256 amount: 스테이킹할 TON 토큰 수량(Ray, 27 decimal)
+
+### [2-2. deposit(address layer2, uint256 amount)](https://etherscan.io/address/0x0b58ca72b12f01fc05f8f252e226f3e2089bd00e#writeProxyContract#F2)
+- 파라미터
+  - address layer2: 스테이킹할 오퍼레이터 주소
+  - uint256 amount: 스테이킹할 TON 토큰 수량(Ray, 27 decimal)

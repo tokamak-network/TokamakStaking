@@ -117,14 +117,13 @@ Operator Manager 컨트랙트가 소유하고 있는 WTON의 밸런스 확인
 
 *********
 
-### [estimatedDistribute(uint256 blockNumber, address opAddress, bool flag)](https://etherscan.io/address/0x0b55a0f463b6defb81c6063973763951712d0e5f#readProxyContract#F30)
+### [estimatedDistribute(uint256 blockNumber, address opAddress)](https://etherscan.io/address/0x0b55a0f463b6defb81c6063973763951712d0e5f#readProxyContract#F30)
 
 다음 블록에서 분배될 예상 시그(Seig) 보상량 조회
 
 - 파라미터
   - uint256 blockNumber: 햔제 블록 번호 + 1
-  - address opAddress: candidateContract 주소
-  - bool flag: 옵션 플래그(true)
+  - address opAddress: candidateContract 주
 - 결과
   - array: 분배 예상 정보 (7번째 인덱스가 추가로 분배될 WTON)
 

@@ -2,7 +2,7 @@
 > DepositManager 컨트랙을 통해 스테이킹과 관련된 함수를 실행 할 수 있습니다.
 - DepositManager : [etherscan link](https://etherscan.io/address/0x0b58ca72b12f01fc05f8f252e226f3e2089bd00e#writeProxyContract)
 
-![Write as Proxy 선택](../img/ton_staking_0.png)
+![Write as Proxy 선택](../img/withdraw_0.png)
 
 위의 이더스캔 링크 페이지의 **Write as Proxy** 페이지에서 실행 가능한 함수를 확인하실 수 있습니다.
 
@@ -17,7 +17,7 @@ requestWithdrawal을 통해 춞금 요청된 TON 은 TON 단위로 관리되는 
 
 - 파라미터
   - address layer2: 출금을 수행할 오퍼레이터 주소
-  - uint256 amount: 출금할 수량
+  - uint256 amount: 출금할 수량(Ray, 27 decimal)
 - 결과
   -  없음
 
