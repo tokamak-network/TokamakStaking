@@ -2,6 +2,23 @@
 > 오퍼레이터의 주요 정보를 확인할 수 있는 함수 및 절차를 안내합니다.
 Layer2Registry: [etherscan link](https://etherscan.io/address/0x7846c2248a7b4de77e9c2bae7fbb93bfc286837b)
 
+---
+
+## 목차
+- [numLayer2s](#numlayer2s)
+- [layer2ByIndex](#layer2byindexuint256-index)
+- [memo](#memo)
+- [stakedOf](#stakedofaddress-user)
+- [totalStaked](#totalstaked)
+- [operator](#operator)
+- [rollupConfig](#rollupconfig)
+- [checkL1BridgeDetail](#checkl1bridgedetailaddress-rollupconfigaddress)
+- [optimismPortal](#optimismportal)
+- [balanceOf](#operator-balanceofaddress-account)
+- [estimatedDistribute](#estimateddistributeuint256-blocknumber-address-opaddress)
+
+---
+
 *********
 
 ### [numLayer2s()](https://etherscan.io/address/0x7846c2248a7b4de77e9c2bae7fbb93bfc286837b#readProxyContract#F13)

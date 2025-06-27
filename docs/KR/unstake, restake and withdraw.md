@@ -1,4 +1,36 @@
-# Unstake, Restake, Withdraw 함수
+# 언스테이킹, 리스테이킹, 출금 함수
+
+---
+
+## 목차
+- [전체 언스테이킹/출금 흐름](#전체-언스테이킹출금-흐름)
+- [requestWithdrawal](#requestwithdrawaladdress-layer2-uint256-amount)
+- [redepositMulti](#redepositmultiaddress-layer2-uint256-n)
+- [processRequests](#processrequestsaddress-layer2-uint256-index)
+
+---
+
+## 전체 언스테이킹/출금 흐름
+
+1. **출금 요청 (언스테이킹)**
+   - 스테이킹을 해제하고 출금을 요청하려면 `requestWithdrawal` 함수를 사용합니다.
+   - 자세한 사용법은 [requestWithdrawal](#requestwithdrawaladdress-layer2-uint256-amount) 항목을 참고하세요.
+
+2. **리스테이킹**
+   - 출금 대기 중인 수량을 다시 스테이킹하려면 `redepositMulti` 함수를 사용합니다.
+   - 자세한 사용법은 [redepositMulti](#redepositmultiaddress-layer2-uint256-n) 항목을 참고하세요.
+
+3. **출금**
+   - 출금 가능 상태가 되면 `processRequests` 함수를 사용하여 실제로 TON을 출금할 수 있습니다.
+   - 자세한 사용법은 [processRequests](#processrequestsaddress-layer2-uint256-index) 항목을 참고하세요.
+
+4. **상세 정보 확인**
+   - 오퍼레이터, L2 정보 등은 [check l2 information.md] 문서를 참고하세요.
+
+> 각 단계별로 함수 사용법, 파라미터, 예시 등은 해당 문서의 목차 및 설명을 참고하면 됩니다.
+
+---
+
 > DepositManager 컨트랙을 통해 스테이킹과 관련된 함수를 실행 할 수 있습니다.
 - DepositManager : [etherscan link](https://etherscan.io/address/0x0b58ca72b12f01fc05f8f252e226f3e2089bd00e#writeProxyContract)
 

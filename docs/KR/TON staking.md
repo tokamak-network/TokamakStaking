@@ -2,6 +2,40 @@
 > TON 컨트랙을 통해 스테이킹과 관련된 함수를 실행 할 수 있습니다.
 - TON : [etherscan link](https://etherscan.io/address/0x2be5e8c109e2197D077D13A82dAead6a9b3433C5#writeContract)
 
+---
+
+## 목차
+- [전체 스테이킹 흐름](#전체-스테이킹-흐름)
+- [approveAndCall (TON)](#approveandcalladdress-spender-uint256-amount-data-bytes)
+- [approveAndCall (WTON)](#approveandcalladdress-spender-uint256-amount-data-bytes-1)
+
+---
+
+## 전체 스테이킹 흐름
+
+1. **준비**
+   - 지갑(메타마스크 등)과 TON/WTON 토큰을 준비합니다.
+   - 컨트랙트 주소 등은 [contract addresses.md] 문서를 참고하세요.
+
+2. **스테이킹**
+   - TON 또는 WTON을 스테이킹하려면 `approveAndCall` 함수를 사용합니다.
+   - TON 스테이킹: [approveAndCall (TON)](#approveandcalladdress-spender-uint256-amount-data-bytes)
+   - WTON 스테이킹: [approveAndCall (WTON)](#approveandcalladdress-spender-uint256-amount-data-bytes-1)
+
+3. **언스테이킹/출금 요청**
+   - 스테이킹 해제(언스테이킹) 및 출금은 [unstake, restake and withdraw.md] 문서를 참고하세요.
+   - 주요 함수: requestWithdrawal, withdraw 등
+
+4. **리스테이킹**
+   - 출금 대기 중인 수량을 다시 스테이킹하려면 [unstake, restake and withdraw.md]의 redepositMulti 함수를 참고하세요.
+
+5. **상세 정보 확인**
+   - 오퍼레이터, L2 정보 등은 [check l2 information.md] 문서를 참고하세요.
+
+> 각 단계별로 함수 사용법, 파라미터, 예시 등은 해당 문서의 목차 및 설명을 참고하면 됩니다.
+
+---
+
 ![Write 선택](../img/stake_ton_0.png)
 
 위의 이더스캔 링크 페이지의 **Write** 페이지에서 실행 가능한 함수를 확인하실 수 있습니다.
@@ -70,6 +104,8 @@ WTON 토큰을 스테이킹 컨트랙트에 승인(approve)하고, 동시에 지
 - 파라미터
   - address spender: DepositManager 주소(`0x0b58ca72b12f01fc05f8f252e226f3e2089bd00e`)
   - uint256 amount: 스테이킹할 TON 토큰 수량(Ray, 27 decimal)
+
+approve가 완료됐다면 그 다음은 Deposit Manager로 이동해서 deposit을 수행해주면 된다
 
 ### [2-2. deposit(address layer2, uint256 amount)](https://etherscan.io/address/0x0b58ca72b12f01fc05f8f252e226f3e2089bd00e#writeProxyContract#F2)
 - 파라미터
