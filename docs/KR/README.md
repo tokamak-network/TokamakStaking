@@ -30,15 +30,5 @@
 
 > 각 단계별로 함수 사용법, 파라미터, 예시 등은 해당 문서의 목차 및 설명을 참고하면 됩니다.
 
----
-
-## 주요 문서
-- [TON staking.md] : TON/WTON 스테이킹 방법 및 함수 설명
-- [unstake, restake and withdraw.md] : 언스테이킹, 리스테이킹, 출금 방법 및 함수 설명
-- [check l2 information.md] : 오퍼레이터 및 L2 정보 확인 방법
-- [contract addresses.md] : 주요 컨트랙트 주소 모음
-- [contract interaction using etherscan.md] : 이더스캔을 활용한 컨트랙트 함수 실행 방법
-
----
 
 

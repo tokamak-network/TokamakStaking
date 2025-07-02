@@ -30,13 +30,3 @@ This directory contains documentation for Tokamak Staking smart contracts, opera
 
 > For each step, refer to the table of contents and explanations in the relevant document for function usage, parameters, and examples.
 
----
-
-## Main Documents
-- [TON staking.md]: How to stake TON/WTON and function explanations
-- [unstake, restake and withdraw.md]: How to unstake, restake, and withdraw, and function explanations
-- [check l2 information.md]: How to check operator and L2 information
-- [contract addresses.md]: List of main contract addresses
-- [contract interaction using etherscan.md]: How to use Etherscan to interact with contract functions
-
----
