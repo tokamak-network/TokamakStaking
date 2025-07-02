@@ -17,16 +17,16 @@ This directory contains documentation for Tokamak Staking smart contracts, opera
    - See [contract addresses.md] for contract addresses.
 
 2. **Staking**
-   - To stake TON or WTON, refer to the `approveAndCall` function in [TON staking.md].
+   - To stake TON or WTON, refer to the `approveAndCall` function in [TON staking.md](./TON%20staking.md).
 
 3. **Unstaking / Withdrawal Request**
-   - To unstake and request withdrawal, refer to the `requestWithdrawal` and `processRequests` functions in [unstake, restake and withdraw.md].
+   - To unstake and request withdrawal, refer to the `requestWithdrawal` and `processRequests` functions in [unstake, restake and withdraw.md](./unstake%2C%20restake%20and%20withdraw.md).
 
 4. **Restaking**
-   - To restake pending withdrawal amounts, refer to the `redepositMulti` function in [unstake, restake and withdraw.md].
+   - To restake pending withdrawal amounts, refer to the `redepositMulti` function in [unstake, restake and withdraw.md](./unstake%2C%20restake%20and%20withdraw.md).
 
 5. **Detailed Information**
-   - For operator and L2 information, see [check l2 information.md].
+   - For operator and L2 information, see [check l2 information.md](./check%20l2%20information.md).
 
 > For each step, refer to the table of contents and explanations in the relevant document for function usage, parameters, and examples.
 
