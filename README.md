@@ -24,7 +24,7 @@ All repositories related to development for TokamakStaking are provided here. Pl
 
 ## Documentation
 - **Etherscan guide:** Interact with TONStaking contracts using [Etherscan guide](docs/EN/README.md).
-- [API Reference](docs/api.md)
+
 
 ## Security
 - All smart contracts are audited by leading security firms
@@ -36,8 +36,9 @@ You can host TONStaking in local environment. Please follow this guide.
 - [Staking community version](https://github.com/tokamak-network/tokamak-staking-interface)
 
 ## Community hosted links
+
 Following links are hosted by a community member and are not endorsed by us. Use at your own risk; we do not provide any guarantee or support for using these links.
-- 
+
 
 ## Contributing
 - Currently, Tokamak Network members developing TONStaking for following whitepaper.
