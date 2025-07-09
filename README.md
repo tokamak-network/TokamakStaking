@@ -14,7 +14,7 @@ All repositories related to development for TokamakStaking are provided here. Pl
 | Type       | Name                                                                                              | Status       |
 | ---------- | ------------------------------------------------------------------------------------------------- | ------------ |
 | Whitepaper | [tokamak-crypto-economics](https://github.com/tokamak-network/papers/blob/master/docs/tokamak-cryptoeconomics-en.pdf)  | ✔️ Completed |
-| Contract   | [tokamak-staking-contracts](https://github.com/tokamak-network/tokamak-staking-v2)         | ✔️ Completed |
+| Contract   | [tokamak-staking-contracts](https://github.com/tokamak-network/ton-staking-v2)         | ✔️ Completed |
 | Frontend   | [Staking V2](https://github.com/tokamak-network/simple-staking-v2)           | ✔️ Completed |
 | Frontend   | [Staking community version](https://github.com/tokamak-network/tokamak-staking-interface)         | ✔️ Completed |
 | Backend    | [staking-v1-subgraph](https://github.com/tokamak-network/staking-v1-subgraph)               | ✔️ Completed |
