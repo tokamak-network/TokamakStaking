@@ -24,20 +24,19 @@ All repositories related to development for TokamakStaking are provided here. Pl
 
 ## Documentation
 - **Etherscan guide:** Interact with TONStaking contracts using [Etherscan guide](docs/EN/README.md).
+- **Guide to set L2 sequencer:** If you want to set your own L2 sequencer, [check this document](https://www.notion.so/tokamak/Candidate-Registration-Contract-Verification-SDK-Testing-1fcd96a400a38030bd2bcd869e0816b7)
 
 
 ## Security
-- All smart contracts are audited by leading security firms
-- Regular security updates and patches
-- Emergency pause functionality for critical situations
+- You can check the audit result in [this post](https://medium.com/tokamak-network/dao-ton-staking-v2-audit-report-2fa7bb1a9291)
 
 ## Local Hosting
 You can host TONStaking in local environment. Please follow this guide. 
 - [Staking community version](https://github.com/tokamak-network/tokamak-staking-interface)
 
-## Community hosted links
+<!-- ## Community hosted links
 
-Following links are hosted by a community member and are not endorsed by us. Use at your own risk; we do not provide any guarantee or support for using these links.
+Following links are hosted by a community member and are not endorsed by us. Use at your own risk; we do not provide any guarantee or support for using these links. -->
 
 
 ## Contributing
@@ -49,7 +48,3 @@ Following links are hosted by a community member and are not endorsed by us. Use
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-<!-- 
-## Disclaimer
-This software is provided "as is", without warranty of any kind. Users should do their own research and understand the risks involved in staking cryptocurrencies. -->
