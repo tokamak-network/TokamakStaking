@@ -32,11 +32,12 @@ All repositories related to development for TokamakStaking are provided here. Pl
 
 ## Local Hosting
 You can host TONStaking in local environment. Please follow this guide. 
-- [Staking community version](https://github.com/tokamak-network/tokamak-staking-interface)
+- [Staking community version](https://github.com/tokamak-network/staking-community-version)
 
-<!-- ## Community hosted links
+## Community hosted links
 
-Following links are hosted by a community member and are not endorsed by us. Use at your own risk; we do not provide any guarantee or support for using these links. -->
+Following links are hosted by a community member and are not endorsed by us. Use at your own risk; we do not provide any guarantee or support for using these links.
+- [Community hosted](https://staking-community-version-pcfu.vercel.app/)
 
 
 ## Contributing
