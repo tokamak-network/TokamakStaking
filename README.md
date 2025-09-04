@@ -4,8 +4,8 @@
 TON Staking is a decentralized staking platform built on the Tokamak Network, designed to provide secure and efficient staking services for TON (Tokamak Network) tokens. This platform enables users to participate in network security and earn rewards through staking mechanisms.
 
 ## Documentation
-- **Announcements**: Past announcements can be found on 
-- **Etherscan guide**: Interact with TONStaking contracts using Etherscan guide. 
+- **Announcements**: Past announcements can be found on [Medium blog](https://medium.com/tokamak-network/search?q=staking).
+- **Etherscan guide**: Interact with TONStaking contracts using [Etherscan guide](https://github.com/tokamak-network/TokamakStaking/blob/main/docs/EN/README.md). You can request support using Github issues.
 
 ## Repository
 
