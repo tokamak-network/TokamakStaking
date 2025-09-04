@@ -20,7 +20,6 @@ All repositories related to development for TokamakStaking are provided here. Pl
 | Backend    | [staking-v1-subgraph](https://github.com/tokamak-network/staking-v1-subgraph)               | ✔️ Completed |
 | SDK        | [ton-staking-sdk-monorepo](https://github.com/tokamak-network/ton-staking-sdk-monorepo)                     | ❌ In Progress |
 
-## Getting Started
 
 ## Documentation
 - **Etherscan guide:** Interact with TONStaking contracts using [Etherscan guide](docs/EN/README.md).
